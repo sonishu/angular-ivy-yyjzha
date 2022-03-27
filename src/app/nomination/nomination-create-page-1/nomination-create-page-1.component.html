@@ -1,0 +1,30 @@
+<div [formGroup]="fg">
+  <p-panel header="Nomination Header">
+    <app-nomination-header
+      formControlName="nominationHeader"
+      [isReadOnly]="isReadOnly"
+      [vessel]="vesselSelected"
+      (valueChanged)="nominationHeaderChanged($event)"
+    >
+      <!-- <projector [index]="1">
+        <ng-template let-ctrl="ctrl">
+          <input type="text" [formControl]="ctrl" />
+        </ng-template>
+      </projector> -->
+    </app-nomination-header>
+  </p-panel>
+
+  <p-panel header="Marine Details" *ngIf="showMarineDetails">
+    <marine-details
+      formControlName="marineDetails"
+      (valueChanged)="vesselChanged($event)"
+    ></marine-details>
+  </p-panel>
+
+  <p-panel header="Secured Section">
+    <app-secured-section
+      [securityContext]="securityContext"
+      formControlName="securedSection"
+    ></app-secured-section>
+  </p-panel>
+</div>

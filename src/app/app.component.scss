@@ -1,0 +1,60 @@
+body {
+  min-width: 600px;
+}
+@mixin create-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 3px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.customer-layout {
+  @include create-grid();
+}
+
+.payment-layout {
+  @include create-grid();
+}
+
+.tab {
+  grid-area: tab;
+}
+
+.tab-content {
+  height: 200px;
+}
+
+.review {
+  grid-area: review;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.additional-info {
+  grid-area: additional-info;
+  border: 1px solid black;
+  height: 40px;
+}
+.footer {
+  grid-area: footer;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-right: 10px;
+}
+.main-layout {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: 40% 40% 1fr;
+
+  grid-template-areas:
+    'tab tab review'
+    'additional-info additional-info additional-info'
+    'footer footer footer';
+}

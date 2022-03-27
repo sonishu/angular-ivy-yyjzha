@@ -1,0 +1,16 @@
+.balanced {
+  width: 200px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  background-color: green;
+}
+.unbalanced {
+  width: 200px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  background-color: red;
+}
